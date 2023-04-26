@@ -47,7 +47,7 @@ public class PT_HttpTest {
         System.assertEquals(SuccessCode, response.getStatusCode());
     }
 
-    private class PT_TestRequestBody extends PT_RequestBodyBase {}
+    private class PT_TestRequestBody extends PT_HttpRequestBodyBase {}
 
     private class PT_HttpCalloutMock implements HttpCalloutMock {
         public HttpResponse respond(HttpRequest req) {
