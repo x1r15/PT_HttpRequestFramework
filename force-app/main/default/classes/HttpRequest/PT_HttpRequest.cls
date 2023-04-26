@@ -1,15 +1,17 @@
-public class PT_HttpRequest implements PT_IHttpRequest{
+public class PT_HttpRequest implements PT_IHttpRequest {
 
     @TestVisible
     private PT_IHttpRequestConfig config;
-    private PT_IRequestBody body;
+    private PT_IHttpRequestBody body;
+
     @TestVisible
     private PT_HttpRequest() {}
+
     public PT_HttpRequest(String metadataName) {
         config = new PT_HttpRequestConfig(metadataName);
     }
 
-    public PT_IHttpRequest setBody(PT_IRequestBody body) {
+    public PT_IHttpRequest setBody(PT_IHttpRequestBody body) {
         this.body = body;
         return this;
     }
