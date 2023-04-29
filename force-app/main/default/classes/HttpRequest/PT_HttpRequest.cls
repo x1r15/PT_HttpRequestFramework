@@ -1,4 +1,4 @@
-public class PT_HttpRequest implements PT_IHttpRequest {
+public class PT_HttpRequest implements PT_IHttpRequest, PT_IMockable {
 
     @TestVisible
     private PT_IHttpRequestConfig config;
@@ -32,5 +32,13 @@ public class PT_HttpRequest implements PT_IHttpRequest {
 
         req.setEndpoint(endpoint);
         return req;
+    }
+
+    public Boolean shouldBeMocked() {
+        return config.hasActiveMock();
+    }
+
+    public PT_IHttpResponseMock getMock() {
+        return config.getActiveMock();
     }
 }

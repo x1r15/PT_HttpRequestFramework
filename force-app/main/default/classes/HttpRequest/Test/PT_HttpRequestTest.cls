@@ -1,5 +1,5 @@
 @IsTest
-public class PT_HttpRequestTest {
+private class PT_HttpRequestTest {
     private static final String HttpMethod_Get = 'GET';
     private static final String HttpMethod_Post = 'POST';
     private static final String EndpointMock = 'ENDPOINT_MOCK';

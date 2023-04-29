@@ -1,5 +1,5 @@
 @IsTest
-public class PT_HttpRequestBodyBaseTest {
+private class PT_HttpRequestBodyBaseTest {
     private static final String StringValue = 'abcdef';
     private static final Integer IntegerValue = 12345;
     @IsTest

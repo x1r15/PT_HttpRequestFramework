@@ -3,6 +3,10 @@
     <label>AlphaVantageRequest</label>
     <protected>false</protected>
     <values>
+        <field>PT_ActiveMock__c</field>
+        <value xsi:type="xsd:string">Success</value>
+    </values>
+    <values>
         <field>PT_Endpoint__c</field>
         <value xsi:type="xsd:string">callout:AlphaVantage/query</value>
     </values>
