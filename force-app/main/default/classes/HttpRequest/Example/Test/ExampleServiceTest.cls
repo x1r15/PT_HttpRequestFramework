@@ -7,7 +7,7 @@ public class ExampleServiceTest {
         HttpResponse responseMock = new HttpResponse();
         responseMock.setBody(mockedResponseMessage);
         responseMock.setStatusCode(200);
-        PT_Http.responseMock = responseMock;
+        Test.setMock(HttpCalloutMock.class, new SuccessResponseMock(responseMock));
 
         //Act
         Test.startTest();
@@ -16,5 +16,17 @@ public class ExampleServiceTest {
 
         //Assert
         System.assertEquals(result, mockedResponseMessage);
+    }
+
+    private class SuccessResponseMock implements HttpCalloutMock {
+        private final HttpResponse response;
+
+        public SuccessResponseMock(HttpResponse response) {
+            this.response = response;
+        }
+
+        public HttpResponse respond(HttpRequest request) {
+            return response;
+        }
     }
 }

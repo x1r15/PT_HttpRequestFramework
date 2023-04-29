@@ -8,8 +8,24 @@ public class PT_HttpRequestConfig implements PT_IHttpRequestConfig {
     public PT_HttpRequestConfig(String metadataName) {
         record = PT_HttpRequest__mdt.getInstance(metadataName);
         if (record == null) {
-            throw new PT_HttpRequestConfigException(PT_HttpRequestConfigException.ExceptionType.NoMdtFound, metadataName);
+            throw new PT_HttpRequestConfigException(
+                    PT_HttpRequestConfigException.ExceptionType.NoMdtFound,
+                    metadataName);
         }
+    }
+
+    public PT_IHttpResponseMock getActiveMock() {
+        if (!hasActiveMock()) {
+            throw new PT_HttpRequestConfigException(
+                    PT_HttpRequestConfigException.ExceptionType.NoMockFound,
+                    record.DeveloperName);
+        }
+
+        return new PT_RuntimeHttpResponseMock(record.PT_ActiveMock__r);
+    }
+
+    public Boolean hasActiveMock() {
+        return record.PT_ActiveMock__c != null && inValidContext();
     }
 
     public Integer getTimeout() {
@@ -22,5 +38,10 @@ public class PT_HttpRequestConfig implements PT_IHttpRequestConfig {
 
     public String getMethod() {
         return record.PT_HttpMethod__c;
+    }
+
+    private static Boolean inValidContext() {
+        //In tests always respond with native HttpCalloutMock
+        return !Test.isRunningTest();
     }
 }
