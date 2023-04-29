@@ -1,17 +1,19 @@
 public class PT_RuntimeHttpResponseMock implements PT_IHttpResponseMock {
+    //Not storing HttpResponse to avoid potential serialization issues;
+    private final Integer statusCodeMocked;
+    private final String bodyMocked;
 
-    private final PT_HttpResponseMock__mdt record;
-
-    public PT_RuntimeHttpResponseMock(PT_HttpResponseMock__mdt record) {
-        this.record = PT_HttpResponseMock__mdt.getInstance(record.DeveloperName);
+    public PT_RuntimeHttpResponseMock(Integer statusCode, String body) {
+        statusCodeMocked = statusCode;
+        bodyMocked = body;
     }
 
     public HttpResponse respond(HttpRequest request) {
         HttpResponse httpResponseMock = new HttpResponse();
-        if (record.PT_Body__c != null) {
-            httpResponseMock.setBody(record.PT_Body__c);
+        if (!String.isEmpty(bodyMocked)) {
+            httpResponseMock.setBody(bodyMocked);
         }
-        httpResponseMock.setStatusCode(Integer.valueOf(record.PT_StatusCode__c));
+        httpResponseMock.setStatusCode(Integer.valueOf(statusCodeMocked));
         return httpResponseMock;
     }
 }

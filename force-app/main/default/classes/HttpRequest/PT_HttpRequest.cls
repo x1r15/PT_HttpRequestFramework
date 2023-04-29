@@ -38,10 +38,7 @@ public class PT_HttpRequest implements PT_IHttpRequest, PT_IMockable {
         return config.hasActiveMock();
     }
 
-    public HttpResponse getMock() {
-        PT_IHttpResponseMock r = config.getActiveMock();
-        return config
-                .getActiveMock()
-                .respond(toRequest());
+    public PT_IHttpResponseMock getMock() {
+        return config.getActiveMock();
     }
 }

@@ -10,7 +10,9 @@ public virtual class PT_Http implements PT_IHttp {
         beforeRequest(httpRequest);
         HttpResponse httpResponse;
         if (shouldReturnMock(request)) {
-            httpResponse = ((PT_IMockable)request).getMock();
+            httpResponse = ((PT_IMockable)request)
+                    .getMock()
+                    .respond(httpRequest);
         } else {
             httpResponse = http.send(httpRequest);
         }

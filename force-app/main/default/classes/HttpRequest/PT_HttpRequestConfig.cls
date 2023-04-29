@@ -21,7 +21,12 @@ public class PT_HttpRequestConfig implements PT_IHttpRequestConfig {
                     record.DeveloperName);
         }
 
-        return new PT_RuntimeHttpResponseMock(record.PT_ActiveMock__r);
+        PT_HttpResponseMock__mdt requestMock =
+                PT_HttpResponseMock__mdt.getInstance(record.PT_ActiveMock__c);
+
+        return new PT_RuntimeHttpResponseMock(
+                Integer.valueOf(requestMock.PT_StatusCode__c),
+                requestMock.PT_Body__c);
     }
 
     public Boolean hasActiveMock() {

@@ -1,5 +1,5 @@
 @IsTest
-public class PT_HttpTest {
+private class PT_HttpTest {
     private final static String BodyMock = 'TEST';
     private final static Integer SuccessCode = 200;
     private static final String HttpMethod_Get = 'GET';
@@ -53,6 +53,28 @@ public class PT_HttpTest {
         //Assert
         System.assertEquals(BodyMock, response.getBody());
         System.assertEquals(SuccessCode, response.getStatusCode());
+    }
+
+    @IsTest
+    static void noMockUsedWhenRequestIsNotMockable_Test() {
+        PT_IHttpRequest req = new PT_NonMockableRequest();
+        Test.setMock(HttpCalloutMock.class, new PT_HttpCalloutMock());
+
+        //Act
+        HttpResponse response = new PT_Http().send(req);
+
+        //Assert
+        System.assertEquals(BodyMock, response.getBody());
+        System.assertEquals(SuccessCode, response.getStatusCode());
+    }
+
+    private class PT_NonMockableRequest implements PT_IHttpRequest {
+        public PT_IHttpRequest setBody(PT_IHttpRequestBody body) {
+            return this;
+        }
+        public HttpRequest toRequest() {
+            return new HttpRequest();
+        }
     }
 
     private class PT_TestRequestBody extends PT_HttpRequestBodyBase {}

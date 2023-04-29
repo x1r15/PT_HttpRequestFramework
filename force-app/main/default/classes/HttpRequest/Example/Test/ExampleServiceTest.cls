@@ -1,5 +1,5 @@
 @IsTest
-public class ExampleServiceTest {
+private class ExampleServiceTest {
     @IsTest
     static void executeSuccess_Test() {
         //Arrange
