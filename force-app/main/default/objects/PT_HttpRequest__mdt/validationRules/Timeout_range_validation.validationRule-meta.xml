@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Timeout_range_validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT(ISBLANK(PT_Timeout__c)), OR(PT_Timeout__c &lt; 1, PT_Timeout__c &gt; 120000))</errorConditionFormula>
+    <errorDisplayField>PT_Timeout__c</errorDisplayField>
+    <errorMessage>The valid range is 1 - 120 000</errorMessage>
+</ValidationRule>

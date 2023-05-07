@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>PT_ActiveMock__c</fullName>
+    <description>If it&apos;s set and you are using PT_Http or class deriving from it the request will always respond with data from Active Mock.</description>
     <externalId>false</externalId>
     <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>If it&apos;s set and you are using PT_Http or class deriving from it the request will always respond with data from Active Mock.</inlineHelpText>
     <label>Active Mock</label>
     <referenceTo>PT_HttpResponseMock__mdt</referenceTo>
     <relationshipLabel>PT_HttpRequests</relationshipLabel>

@@ -1,16 +1,18 @@
 public class PT_HttpRequestConfig implements PT_IHttpRequestConfig {
+
+    private final static Integer DefaultTimeout = 10000;
+    private final static String NamedCredentialsPrefix = 'callout:';
+
+    @TestVisible
+    private static List<PT_HttpRequest__mdt> ConfigsCache = PT_HttpRequest__mdt.getAll().values();
     @TestVisible
     private PT_HttpRequest__mdt record;
-
     @TestVisible
     private PT_HttpRequestConfig() {}
 
-    public PT_HttpRequestConfig(String metadataName) {
-        record = PT_HttpRequest__mdt.getInstance(metadataName);
+    public PT_HttpRequestConfig(String metadataIdentifier) {
         if (record == null) {
-            throw new PT_HttpRequestConfigException(
-                    PT_HttpRequestConfigException.ExceptionType.NoMdtFound,
-                    metadataName);
+            record = getMetadataRecord(metadataIdentifier);
         }
     }
 
@@ -34,11 +36,11 @@ public class PT_HttpRequestConfig implements PT_IHttpRequestConfig {
     }
 
     public Integer getTimeout() {
-        return Integer.valueOf(record.PT_Timeout__c);
+        return record.PT_Timeout__c == null ? DefaultTimeout : Integer.valueOf(record.PT_Timeout__c);
     }
 
     public String getEndpoint() {
-        return record.PT_Endpoint__c;
+        return NamedCredentialsPrefix + record.PT_NamedCredentials__c +  record.PT_Endpoint__c;
     }
 
     public String getMethod() {
@@ -49,4 +51,17 @@ public class PT_HttpRequestConfig implements PT_IHttpRequestConfig {
         //In tests always respond with native HttpCalloutMock
         return !Test.isRunningTest();
     }
+
+    private static PT_HttpRequest__mdt getMetadataRecord(String identifier) {
+        Boolean isSandbox = PT_EnvironmentInformation.getInstance().isSandbox();
+        for (PT_HttpRequest__mdt requestConfig : ConfigsCache) {
+            if (requestConfig.PT_Identifier__c == identifier && requestConfig.PT_UseInProduction__c != isSandbox) {
+                return requestConfig;
+            }
+        }
+        throw new PT_HttpRequestConfigException(
+                PT_HttpRequestConfigException.ExceptionType.NoMdtFound,
+                identifier);
+    }
 }
+

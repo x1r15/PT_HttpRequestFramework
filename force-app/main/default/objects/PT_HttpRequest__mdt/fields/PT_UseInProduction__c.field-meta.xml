@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PT_UseInProduction__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Used to determine if the record should be used in Sandboxes or in Production.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Used to determine if the record should be used in Sandboxes or in Production.</inlineHelpText>
+    <label>Use in Production</label>
+    <type>Checkbox</type>
+</CustomField>
