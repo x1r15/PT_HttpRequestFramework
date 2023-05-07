@@ -4,18 +4,34 @@
     <protected>false</protected>
     <values>
         <field>PT_ActiveMock__c</field>
-        <value xsi:type="xsd:string">Success</value>
+        <value xsi:nil="true"/>
+    </values>
+    <values>
+        <field>PT_Description__c</field>
+        <value xsi:nil="true"/>
     </values>
     <values>
         <field>PT_Endpoint__c</field>
-        <value xsi:type="xsd:string">callout:AlphaVantage/query</value>
+        <value xsi:type="xsd:string">/query</value>
     </values>
     <values>
         <field>PT_HttpMethod__c</field>
         <value xsi:type="xsd:string">GET</value>
     </values>
     <values>
+        <field>PT_Identifier__c</field>
+        <value xsi:type="xsd:string">AlphaVantageRequest</value>
+    </values>
+    <values>
+        <field>PT_NamedCredentials__c</field>
+        <value xsi:type="xsd:string">AlphaVantage</value>
+    </values>
+    <values>
         <field>PT_Timeout__c</field>
         <value xsi:type="xsd:double">120000.0</value>
+    </values>
+    <values>
+        <field>PT_UseInProduction__c</field>
+        <value xsi:type="xsd:boolean">true</value>
     </values>
 </CustomMetadata>

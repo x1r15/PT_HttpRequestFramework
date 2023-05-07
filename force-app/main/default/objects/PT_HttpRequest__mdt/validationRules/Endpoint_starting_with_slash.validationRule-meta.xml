@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Endpoint_starting_with_slash</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT(ISBLANK(PT_Endpoint__c)), NOT(REGEX(PT_Endpoint__c, &apos;^/.*&apos;)))</errorConditionFormula>
+    <errorDisplayField>PT_Endpoint__c</errorDisplayField>
+    <errorMessage>The endpoint should start with &quot;/&quot; character.</errorMessage>
+</ValidationRule>
