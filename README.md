@@ -288,5 +288,4 @@ For a complete example based on the https://www.alphavantage.co/documentation/ p
 `force-app/main/default/classes/HttpRequest/Example/` folder and related *custom metadata* record
 located in `force-app/main/default/customMetadata/`.
 
-# Want to get in touch?
-Contact me via [linkedin](https://www.linkedin.com/in/piotr-wyszynski-781968ab/)
+

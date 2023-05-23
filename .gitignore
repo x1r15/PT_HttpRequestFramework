@@ -43,3 +43,14 @@ $RECYCLE.BIN/
 **/__pycache__/
 **/.venv/
 **/venv/
+
+# IdeSpecific
+IlluminatedCloud
+.idea
+.vscode
+
+# NotRelevant
+manifest
+.husky
+config
+

@@ -7,8 +7,8 @@ public class PT_HttpRequest implements PT_IHttpRequest, PT_IMockable {
     @TestVisible
     private PT_HttpRequest() {}
 
-    public PT_HttpRequest(String metadataName) {
-        config = new PT_HttpRequestConfig(metadataName);
+    public PT_HttpRequest(String metadataIdentifier) {
+        config = new PT_HttpRequestConfig(metadataIdentifier);
     }
 
     public PT_IHttpRequest setBody(PT_IHttpRequestBody body) {
