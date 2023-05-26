@@ -1,6 +1,4 @@
 # Introduction
-## What is it?
-It's a minimalistic framework that's meant to centralize performing http requests, provide an easy-to-understand API which at the same time does not limit the developer's flexibility needed to handle more complex scenarios.
 
 ## Key Characteristics
 - Metadata based request configuration
@@ -31,7 +29,4 @@ sf org login web --instance-url [instanceUrl] --alias [alias]
 sf deploy start --source-dir force-app/ -o [alias]
 ```
 ### Using your IDE
-Alternatively, you can clone the repository and drop its content into your SFDX project. Once the files are in the right folders, simply use your IDE to deploy them.  
-
-## Want to get in touch?
-Contact me via [linkedin](https://www.linkedin.com/in/piotr-wyszynski-781968ab/)
+Alternatively, you can clone the repository and drop its content into your SFDX project. Once the files are in the right folders, simply use your IDE to deploy them.

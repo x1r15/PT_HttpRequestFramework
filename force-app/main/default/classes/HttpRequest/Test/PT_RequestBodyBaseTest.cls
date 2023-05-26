@@ -36,7 +36,7 @@ public class PT_RequestBodyBaseTest {
         System.assertEquals(StringValue, deserializedBody.get('stringValue'));
         System.assertEquals(IntegerValue, deserializedBody.get('integerValue'));
     }
-    private class PT_TestRequestBody extends PT_RequestBodyBase {
+    private class PT_TestRequestBody extends PT_HttpRequestBodyBase {
         public String stringValue;
         public Integer integerValue;
     }

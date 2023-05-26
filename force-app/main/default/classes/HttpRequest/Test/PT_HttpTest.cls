@@ -72,6 +72,9 @@ private class PT_HttpTest {
         public PT_IHttpRequest setBody(PT_IHttpRequestBody body) {
             return this;
         }
+        public PT_IHttpRequest setParams(List<String> values) {
+            return this;
+        }
         public HttpRequest toRequest() {
             return new HttpRequest();
         }

@@ -54,3 +54,5 @@ manifest
 .husky
 config
 
+force-app/main/default/classes/develop
+
