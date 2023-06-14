@@ -29,7 +29,7 @@ The first step is to create the **PT_HttpRequest__mdt** record.
 1. In the setup, navigate to _Custom Metadata Types_. 
 2. Click the _Manage Records_ link located next to **PT_HttpRequest** metadata name. 
 3. Click on the _New_ button. 
-4. Feel the fields:
+4. Fill the fields:
    - **Label:** JsonPlaceholder_GET_Todos_SB
    - **PT_HttpRequest Name:** JsonPlaceholder_GET_Todos_SB
    - **Identifier:** JsonPlaceholder_GET_Todos
@@ -126,7 +126,7 @@ The first step is to create the **PT_HttpRequest__mdt** record.
 1. In the setup, navigate to _Custom Metadata Types_.
 2. Click the _Manage Records_ link located next to **PT_HttpRequest** metadata name.
 3. Click on the _New_ button.
-4. Feel the fields:
+4. Fill the fields:
    - **Label:** JsonPlaceholder_GET_Todo_SB
    - **PT_HttpRequest Name:** JsonPlaceholder_GET_Todo_SB
    - **Identifier:** JsonPlaceholder_GET_Todo
@@ -196,7 +196,7 @@ The first step is to create the **PT_HttpRequest__mdt** record.
 1. In the setup, navigate to _Custom Metadata Types_.
 2. Click the _Manage Records_ link located next to **PT_HttpRequest** metadata name.
 3. Click on the _New_ button.
-4. Feel the fields:
+4. Fill the fields:
    - **Label:** JsonPlaceholder_GET_Comments_SB
    - **PT_HttpRequest Name:** JsonPlaceholder_GET_Comments_SB
    - **Identifier:** JsonPlaceholder_GET_Comments
@@ -292,7 +292,7 @@ The first step is to create the **PT_HttpRequest__mdt** record.
 1. In the setup, navigate to _Custom Metadata Types_.
 2. Click the _Manage Records_ link located next to **PT_HttpRequest** metadata name.
 3. Click on the _New_ button.
-4. Feel the fields:
+4. Fill the fields:
    - **Label:** JsonPlaceholder_POST_Post_SB
    - **PT_HttpRequest Name:** JsonPlaceholder_POST_Post_SB
    - **Identifier:** JsonPlaceholder_POST_Post
@@ -584,7 +584,7 @@ The first step is to create the **PT_HttpRequest__mdt** record.
 1. In the setup, navigate to _Custom Metadata Types_.
 2. Click the _Manage Records_ link located next to **PT_HttpResponseMock** metadata name.
 3. Click on the _New_ button.
-4. Feel the fields:
+4. Fill the fields:
    - **Label:** AlwaysSucceedWithFixedId
    - **PT_HttpResponseMock Name:** AlwaysSucceedWithFixedId
    - **Status Code:** 201
